@@ -6,8 +6,16 @@ class SecretSanta < Sinatra::Base
    erb :index
   end
 
-  get "/secretsanta/new" do
-    erb :new
+  post '/names' do
+    $name = params[:name]
+    p $name
+    erb :index
+    redirect '/list'
+  end
+
+  get '/list' do
+    p $name
+    erb :list
   end
 
   run! if app_file == $0
