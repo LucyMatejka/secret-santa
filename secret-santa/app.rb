@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'data_mapper_setup'
 
 class SecretSanta < Sinatra::Base
   get '/' do
@@ -15,6 +16,18 @@ class SecretSanta < Sinatra::Base
 
   get '/list' do
     p $name
+    erb :list
+  end
+
+  post '/names' do
+    $email = params[:email]
+    p $email
+    erb :index
+    redirect '/list'
+  end
+
+  get '/list' do
+    p $email
     erb :list
   end
 
