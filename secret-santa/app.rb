@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require 'data_mapper_setup'
+require_relative 'data_mapper_setup'
 
 class SecretSanta < Sinatra::Base
   get '/' do

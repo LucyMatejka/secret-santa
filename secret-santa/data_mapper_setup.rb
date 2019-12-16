@@ -5,7 +5,7 @@ env = ENV['RACK_ENV'] || 'development'
 # we're telling datamapper to use a postgres database on localhost. The name will be "secret_santa_test" or "secret_santa_development" depending on the environment
 DataMapper.setup(:default, "postgres://localhost/secret_santa_#{env}")
 
-require './app/link' # require each model individually - the path may vary depending on your file structure.
+require './app' # require each model individually - the path may vary depending on your file structure.
 
 # After declaring your models, you should finalise them
 DataMapper.finalize
